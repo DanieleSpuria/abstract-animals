@@ -20,7 +20,21 @@ public class Main {
 			ani[i].verso();
 			ani[i].mangia();
 			ani[i].dormi();
+			
+			if (Volante.class.isAssignableFrom(ani[i].getClass()))
+				faiVolare((Volante) ani[i]);
+			else	
+				faiNuotare((Nuotante) ani[i]);
+				
 			System.out.println("\n---------------------------------\n");
 		}
+	}
+	
+	static void faiVolare(Volante animale) {
+		animale.vola();
+	}	
+	
+	static void faiNuotare(Nuotante animale) {
+		animale.nuota();
 	}
 }
