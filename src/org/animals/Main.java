@@ -16,12 +16,12 @@ public class Main {
 		ani[3] = del;
 		
 		for (int i = 0; i < ani.length; i++) {	
-			System.out.println("Animale " + (i + 1) + ":\n");
+			System.out.println("[ " + ani[i].getClass().getSimpleName() + " ]\n");
 			ani[i].verso();
 			ani[i].mangia();
 			ani[i].dormi();
 			
-			if (Volante.class.isAssignableFrom(ani[i].getClass()))
+			if (ani[i] instanceof Volante)
 				faiVolare((Volante) ani[i]);
 			else	
 				faiNuotare((Nuotante) ani[i]);
